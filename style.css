@@ -517,3 +517,9 @@ svg{
 	position: initial!important;
 	opacity: 1!important;
 }
+
+@media (min-width:1025px) {
+	.scroll {
+		opacity: 0;
+	}
+}
