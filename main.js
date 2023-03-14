@@ -6,20 +6,29 @@ const experience = new Experience(document.querySelector(".experience-canvas"));
 const arrowSvgWrapper = document.querySelector('.arrow-svg-wrapper');
 const scrollToBottom = document.querySelector('.scroll');
 
-const observer = new MutationObserver(mutations => {
-  mutations.forEach(mutation => {
-    if (mutation.attributeName === 'style') {
-      const arrowSvgWrapperOpacity = window.getComputedStyle(arrowSvgWrapper).getPropertyValue('opacity');
-      if (arrowSvgWrapperOpacity === '0') {
-        scrollToBottom.style.opacity = '1';
-      }
-    }
-  });
-});
+// const observer = new MutationObserver(mutations => {
+//   mutations.forEach(mutation => {
+//     if (mutation.attributeName === 'style') {
+//       const arrowSvgWrapperOpacity = window.getComputedStyle(arrowSvgWrapper).getPropertyValue('opacity');
+//       if (arrowSvgWrapperOpacity === '0') {
+//         scrollToBottom.style.opacity = '1';
+//       }
+//     }
+//   });
+// });
 
-observer.observe(arrowSvgWrapper, { attributes: true });
+// observer.observe(arrowSvgWrapper, { attributes: true });
 
 scrollToBottom.addEventListener('click', function () {
+	const keydownEvent = new KeyboardEvent("keydown", {
+        key: "ArrowDown",
+        code: "ArrowDown",
+        keyCode: 40,
+        which: 40,
+    });
+  window.dispatchEvent(keydownEvent);
+
+	
 	document.documentElement.scrollBy({
 		top: 1500,
 		behavior: 'smooth'
