@@ -343,6 +343,7 @@ export default class Controls {
                     .to(
                         this.room.position,
                         {
+														x: 0.1,
                             y: 0.7,
                         },
                         "same"
