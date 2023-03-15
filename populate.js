@@ -32,12 +32,19 @@ projects.forEach((p) => {
 	link.target = "_blank";
 	link.rel = "noopener noreferrer";
 	link.classList.add("section-heading");
+	link.classList.add("decor");
 	link.textContent = p.name;
 
 	const desc = document.createElement("p");
 	desc.classList.add("section-text");
 	desc.textContent = p.description;
 
+	link.addEventListener("mouseover", () => {
+		console.log("Hover")
+		window.projectVideo.src = ""
+		window.projectVideo.poster = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png"
+	})
+	
 	const project = document.createElement("div");
 	project.appendChild(link);
 	project.appendChild(desc);
@@ -45,23 +52,29 @@ projects.forEach((p) => {
 	projectsContainer.appendChild(project);
 });
 
-// const skillsContainer = document.querySelector("#my-skills");
-// skills.forEach((s) => {
-//   const skillName = document.createElement("p");
-//   skillName.classList.add("section-text");
-//   skillName.textContent = s.name;
+const skillsContainer = document.querySelector("#skills");
+skills.forEach((s) => {
+  const skillName = document.createElement("p");
+  skillName.classList.add("section-text");
+  skillName.textContent = s.name;
 
-//   const skillLevel = document.createElement("div");
-//   skillLevel.classList.add("skill-level");
-//   skillLevel.style.width = s.level + "%";
+  const skillLevelContainer = document.createElement("div");
+	skillLevelContainer.setAttribute('data-percent', s.level + "%")
+  skillLevelContainer.classList.add("skill-level-container");
+	
+  const skillLevel = document.createElement("div");
+  skillLevel.classList.add("skill-level");
+  skillLevel.style.width = s.level + "%";
 
-//   const skill = document.createElement("div");
-//   skill.classList.add("skill");
-//   skill.appendChild(skillName);
-//   skill.appendChild(skillLevel);
+	skillLevelContainer.appendChild(skillLevel)
 
-//   skillsContainer.appendChild(skill);
-// });
+  const skill = document.createElement("div");
+  skill.classList.add("skill");
+  skill.appendChild(skillName);
+  skill.appendChild(skillLevelContainer);
+
+  skillsContainer.appendChild(skill);
+});
 
 const contactHeading = document.querySelector("#contact-me h1");
 const contactDesc = document.querySelector("#contact-me .section-text");

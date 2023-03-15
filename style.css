@@ -318,7 +318,7 @@ svg{
   padding: 20% 5%;
 }
 
-.section-heading{
+.section-heading {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.8;
@@ -326,6 +326,12 @@ svg{
 	display: inline-block;
   margin-top: 64px;
   color: var(--color-text);
+}
+
+.section-heading.decor {
+	background: var(--color-blue);
+	color: var(--color-background);
+  padding: 0px 10px 0px 10px;
 }
 
 .section-text{
@@ -522,4 +528,37 @@ svg{
 	.scroll {
 		opacity: 0;
 	}
+}
+
+.skill {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.skill-level-container::before {
+	content: attr(data-percent);
+    position: absolute;
+    align-items: center;
+	color: var(--color-background);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.skill-level-container {
+	background: lightgray;
+	position: relative;
+  border-radius: 12px;
+	width: 50%;
+}
+
+.skill-level {
+	width: 85%;
+  background: var(--color-blue);
+  height: 20px;
+  border-radius: 12px;
 }

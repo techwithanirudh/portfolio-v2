@@ -79,28 +79,28 @@
         },
       ];
 
-      // const skills = [
-      //   {
-      //     name: "React",
-      //     level: 85,
-      //   },
-      //   {
-      //     name: "JavaScript",
-      //     level: 98,
-      //   },
-      //   {
-      //     name: "Python",
-      //     level: 72,
-      //   },
-      //   {
-      //     name: "HTML",
-      //     level: 98,
-      //   },
-      //   {
-      //     name: "CSS",
-      //     level: 80,
-      //   },
-      // ];
+      const skills = [
+        {
+          name: "React",
+          level: 85,
+        },
+        {
+          name: "JavaScript",
+          level: 98,
+        },
+        {
+          name: "Python",
+          level: 72,
+        },
+        {
+          name: "HTML",
+          level: 98,
+        },
+        {
+          name: "CSS",
+          level: 80,
+        },
+      ];
 
       const contact = {
         name: "Contact Me",
